@@ -1,11 +1,22 @@
-name: Security Scan
+name: DevSecOps Pipeline
 
 on: [push]
 
 jobs:
-  scan:
+  security:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
-      - name: Run Trivy
+
+      - name: Run Trivy (fail on HIGH/CRITICAL)
         uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: config
+          severity: HIGH,CRITICAL
+          exit-code: 1
+
+      - name: Kubescape scan
+        run: |
+          curl -s https://raw.githubusercontent.com/kubescape/kubescape/master/install.sh | /bin/bash
+          kubescape scan framework nsa .

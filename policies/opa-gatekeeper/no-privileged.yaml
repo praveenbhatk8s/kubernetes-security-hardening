@@ -1,6 +1,6 @@
 # policies/opa-gatekeeper/no-privileged.yaml
 apiVersion: constraints.gatekeeper.sh/v1beta1
-kind: K8sPSPPrivilegedContainer
+kind: K8sBlockPrivileged
 metadata:
   name: no-privileged
 spec:

@@ -1,2 +1,8 @@
 #!/usr/bin/env bash
-trivy k8s --report summary kind-dev-cluster
+
+echo "Running Trivy cluster scan..."
+
+trivy k8s cluster \
+  --report summary \
+  --severity HIGH,CRITICAL \
+  --timeout 10m
