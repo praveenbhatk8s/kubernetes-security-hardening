@@ -4,12 +4,20 @@ metadata:
   name: require-nonroot
 spec:
   validationFailureAction: enforce
+  background: true
   rules:
   - name: check-non-root
     match:
       resources:
         kinds:
         - Pod
+    exclude:
+      resources:
+        namespaces:
+        - kube-system
+        - kyverno
+        - trivy-temp
+        - falco
     validate:
       message: "Containers must not run as root"
       pattern:

@@ -13,6 +13,11 @@ This project demonstrates Kubernetes security best practices:
 ```bash
 helm repo add kyverno https://kyverno.github.io/kyverno/
 helm install kyverno kyverno/kyverno -n kyverno --create-namespace
+kubectl apply -f https://raw.githubusercontent.com/open-policy-agent/gatekeeper/master/deploy/gatekeeper.yaml
+helm repo add falcosecurity https://falcosecurity.github.io/charts
+helm install falco falcosecurity/falco -n falco --create-namespace
+helm repo add falcosecurity https://falcosecurity.github.io/charts
+helm install falco falcosecurity/falco -n falco --create-namespace
 kubectl apply -f namespaces/
 kubectl apply -f rbac/
 kubectl apply -f network-policies/
