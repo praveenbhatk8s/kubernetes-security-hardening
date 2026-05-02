@@ -210,6 +210,7 @@ Additional documentation:
 - `docs/hardening-checklist.md`
 - `docs/incident-response.md`
 - `docs/cks-notes.md`
+- `docs/architecture.md`
 
 ## Known Gaps
 
