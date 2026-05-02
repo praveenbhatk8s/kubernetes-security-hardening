@@ -2,7 +2,7 @@
 
 echo "Running Trivy cluster scan..."
 
-trivy k8s cluster \
+trivy k8s kind-dev-cluster \
   --report summary \
   --severity HIGH,CRITICAL \
   --timeout 10m
