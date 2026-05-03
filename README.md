@@ -1,6 +1,14 @@
 # Kubernetes Security Hardening Lab
 
-This repo demonstrates practical Kubernetes security controls on a local kind cluster.
+[![DevSecOps Pipeline](https://github.com/praveenbhatk8s/kubernetes-security-hardening/actions/workflows/security-scan.yml/badge.svg)](https://github.com/praveenbhatk8s/kubernetes-security-hardening/actions/workflows/security-scan.yml)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-Security%20Hardening-326CE5?logo=kubernetes&logoColor=white)
+![Kyverno](https://img.shields.io/badge/Kyverno-Policy%20as%20Code-2563EB)
+![Falco](https://img.shields.io/badge/Falco-Runtime%20Detection-00AEC7)
+![Trivy](https://img.shields.io/badge/Trivy-Cluster%20Scanning-1904DA)
+
+Practical Kubernetes security hardening lab for proving admission control, runtime detection, network isolation, RBAC, and CI/CD security checks on a local kind cluster.
+
+The goal is to make security controls visible and testable: apply a bad pod and watch it get denied, apply a good pod and watch it run, then validate the cluster with scanners.
 
 It covers:
 
